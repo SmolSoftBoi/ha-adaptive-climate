@@ -1,0 +1,9 @@
+[project]
+name = "ha-adaptive-climate"
+version = "0.1.0"
+description = "ASHRAE-style adaptive climate helper/controller integration for Home Assistant"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["custom_components/adaptive_climate"]

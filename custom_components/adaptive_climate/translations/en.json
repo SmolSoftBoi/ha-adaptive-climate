@@ -1,0 +1,10 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Adaptive Climate",
+        "description": "Set up an adaptive comfort controller for one room or zone."
+      }
+    }
+  }
+}
