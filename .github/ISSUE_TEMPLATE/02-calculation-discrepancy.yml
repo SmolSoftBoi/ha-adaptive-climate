@@ -1,0 +1,81 @@
+name: Calculation discrepancy
+description: Report an unexpected adaptive target, comfort band, or ventilation result.
+title: "[Calculation]: "
+labels:
+  - bug
+body:
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues for the same calculation.
+          required: true
+        - label: I reproduced this using the latest available version.
+          required: true
+  - type: input
+    id: integration_version
+    attributes:
+      label: Adaptive Climate version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: dropdown
+    id: units
+    attributes:
+      label: Temperature units
+      options:
+        - Celsius
+        - Fahrenheit
+    validations:
+      required: true
+  - type: input
+    id: indoor_temperature
+    attributes:
+      label: Indoor temperature
+      placeholder: 21.4 °C
+    validations:
+      required: true
+  - type: input
+    id: outdoor_temperature
+    attributes:
+      label: Outdoor temperature
+      placeholder: 12.8 °C
+    validations:
+      required: true
+  - type: dropdown
+    id: comfort_category
+    attributes:
+      label: Comfort category
+      options:
+        - Category I
+        - Category II
+        - Category III
+    validations:
+      required: true
+  - type: input
+    id: calculated_target
+    attributes:
+      label: Calculated target
+      placeholder: 22.2 °C
+    validations:
+      required: true
+  - type: input
+    id: expected_target
+    attributes:
+      label: Expected target
+      placeholder: 21.8 °C
+    validations:
+      required: true
+  - type: textarea
+    id: reasoning
+    attributes:
+      label: Why do you expect a different result?
+      description: Include the formula, reference, or comparison used.
+    validations:
+      required: true
+  - type: textarea
+    id: entity_states
+    attributes:
+      label: Relevant entity states
+      render: yaml
