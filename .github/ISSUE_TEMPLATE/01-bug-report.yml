@@ -1,0 +1,149 @@
+name: Bug report
+description: Report a reproducible problem with Adaptive Climate.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Adaptive Climate. Please include enough detail for the problem to be reproduced.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues for the same problem.
+          required: true
+        - label: I am using the latest available version of Adaptive Climate.
+          required: true
+        - label: I restarted Home Assistant after installing or updating the integration.
+          required: true
+        - label: I removed secrets, precise coordinates, tokens and personal information.
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the problem and when it occurs.
+      placeholder: Adaptive Climate becomes unavailable when...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest reliable set of steps that triggers the problem.
+      placeholder: |
+        1. Add the integration...
+        2. Select these entities...
+        3. Restart Home Assistant...
+        4. Observe...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      placeholder: The integration should...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      placeholder: Instead, it...
+    validations:
+      required: true
+
+  - type: input
+    id: integration_version
+    attributes:
+      label: Adaptive Climate version
+      placeholder: 0.1.0
+    validations:
+      required: true
+
+  - type: input
+    id: home_assistant_version
+    attributes:
+      label: Home Assistant Core version
+      placeholder: 2026.7.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: installation_type
+    attributes:
+      label: Home Assistant installation type
+      options:
+        - Home Assistant OS
+        - Home Assistant Container
+        - Home Assistant Core
+        - Home Assistant Supervised
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: active_control
+    attributes:
+      label: Was active setpoint control enabled?
+      options:
+        - "No — observe-only mode"
+        - "Yes — active control enabled"
+        - Not sure
+    validations:
+      required: true
+
+  - type: input
+    id: climate_platform
+    attributes:
+      label: Climate platform or manufacturer
+      description: For example, Tado, Generic Thermostat, SmartIR, Nest or Ecobee.
+      placeholder: Tado
+    validations:
+      required: true
+
+  - type: input
+    id: indoor_source
+    attributes:
+      label: Indoor temperature source
+      description: Entity ID and integration or device.
+      placeholder: sensor.living_room_temperature — Tado
+    validations:
+      required: true
+
+  - type: input
+    id: outdoor_source
+    attributes:
+      label: Outdoor temperature source
+      description: Entity ID and integration or device.
+      placeholder: sensor.outdoor_temperature — local weather station
+    validations:
+      required: true
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Relevant entity states or diagnostics
+      description: Paste only the relevant, redacted data.
+      render: yaml
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Enable debug logging where possible and remove sensitive data.
+      render: shell
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Add screenshots, automation details or anything else that may help.
